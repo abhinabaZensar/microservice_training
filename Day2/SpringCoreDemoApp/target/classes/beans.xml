@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+<context:annotation-config/>
+
+<bean id="item_1" class="com.spring.Item">
+	<property name="name" value="laptop"/>
+	<property name="value" value = "60000"/>
+</bean>
+
+<bean id="item_2" class="com.spring.Item">
+	<property name="name" value="iphoneX"/>
+	<property name="value" value = "75000"/>
+</bean>
+
+<bean id="item_3" class="com.spring.Item">
+	<property name="name" value="xerox"/>
+	<property name="value" value = "43520"/>
+</bean>
+
+<bean id="item_4" class="com.spring.Item">
+	<property name="name" value="cooker"/>
+	<property name="value" value = "15000"/>
+</bean>
+
+<bean id="item_5" class="com.spring.Item">
+	<property name="name" value="samsung tv"/>
+	<property name="value" value = "65000"/>
+</bean>
+
+
+<bean id="order_1" class="com.spring.Order" scope="prototype" >
+	<property name="title" value="purchaseOrder_1"/>
+</bean>
+<!-- 
+<bean id="order_2" class="com.spring.Order">
+	<property name="title" value="purchaseOrder_2"/>
+	<property name="item" value="item_2"/>
+</bean>
+
+<bean id="order_3" class="com.spring.Order">
+	<property name="title" value="purchaseOrder_3"/>
+	<property name="item" value="item_3"/>
+</bean>
+
+<bean id="order_4" class="com.spring.Order">
+	<property name="title" value="purchaseOrder_4"/>
+	<property name="item" value="item_4"/>
+</bean>
+
+<bean id="order_5" class="com.spring.Order">
+	<property name="title" value="purchaseOrder_5"/>
+	<property name="item" value="item_5"/>
+</bean>
+
+
+
+
+ -->
+
+
+
+</beans>

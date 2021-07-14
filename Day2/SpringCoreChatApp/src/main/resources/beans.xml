@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+<!-- <context:annotation-config/> -->
+
+<bean id="user_1" class="com.spring.User">
+	<property name="userName" value="Ravi"/>
+	<property name="messages">
+		<list>
+		<value>Hi there</value>
+		<value>I am Ravi.</value>
+		<value>My hometown is Chennai.</value>
+		<value>Hi there</value>
+		</list>
+	</property>
+	
+	<property name="homeMap">
+		<map>
+		<entry key="Ravi" value="Chennai"/>
+		</map>
+	</property>
+</bean>
+
+<bean id="user_2" class="com.spring.User">
+	<property name="userName" value="Anuj"/>
+	<property name="messages">
+		<set>
+		<value>Hello</value>
+		<value>I am Anuj.</value>
+		<value>My hometown is Mumbai.</value>
+		<value>Hello</value>
+		</set>
+	</property>
+	<property name="homeMap">
+		<props>
+		<prop key="Anuj">"Mumbai"</prop>
+		</props>
+	</property>
+</bean>
+
+<bean id="chatroom" class="com.spring.ChatRoom">
+	<property name="users"  ref="userList"/>
+</bean>
+
+<bean id="userList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="user_1" />      
+                <ref bean="user_2" />
+            </list>
+        </constructor-arg>
+</bean>
+
+
+</beans>
